@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/car")
 public class CarController {
 
     CarRepository carRepository;
@@ -18,8 +17,14 @@ public class CarController {
         this.carRepository = carRepository;
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @RequestMapping(value = "/car", method = RequestMethod.GET)
     public Iterable<Car> getAll() {
         return carRepository.findAll();
+    }
+
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String hello() {
+        return "Hello Horeku";
     }
 }
