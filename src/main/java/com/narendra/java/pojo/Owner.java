@@ -11,6 +11,7 @@ public class Owner {
     private String firstname, lastname;
 
 
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<Car> cars;
 
